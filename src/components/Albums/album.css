@@ -1,0 +1,85 @@
+
+.main{
+    height:calc(100vh-72px);
+    background: radial-gradient(circle at 74.2% 50.9%, rgb(174, 193, 243) 5.2%, rgb(201, 212, 237) 75.3%);
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .addAlbum{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .addAlbum label{
+    font-size: 2.5rem;
+    color: white;
+  }
+  
+  .addAlbum button{
+   margin-top: 10px;
+  }
+  
+.album-box{
+    height: 115px;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 7px;
+    display: flex;
+    flex-direction:column;
+     justify-content: space-between;
+    text-align: center;
+    margin: 30px;
+    background-color: rgb(48, 84, 176);
+    padding:10px 0;
+}
+
+.Wrapper{
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: center;
+    align-items: center;
+}
+
+h5{
+    color: rgb(255, 255, 255);
+}
+
+.album-box .buttons{
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    margin-bottom: 9px;
+}
+
+.buttons .del{
+    background-color: brown;
+    height: 30px;
+    width: 50px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+ 
+   
+}
+.buttons .upd{
+    background-color: rgb(42, 165, 89);
+    height: 30px;
+    width: 65px;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.del:hover, .upd:hover{
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
