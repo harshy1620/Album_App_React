@@ -9,22 +9,21 @@ const[update,setupdate]=useState(null);
 const {id} = useParams();
 const navigate = useNavigate();
 
+// function to handle onclick event
 const handleUpdate = () => {
   updateAlbum(id,update);
   navigate('/');
 }
 
   return (
-<div className='wrapper'>
-    <div className='Update'>
-      <label style={{color:"white",}}>Update Your Album</label>
+<div className="wrapper">
+    <div className="Update">
+      <label style={{color:"white"}}>Update Your Album</label>
       <input type="text" name="title" placeholder='write title here...' onChange={(e) => setupdate(e.target.value)} />
       <button onClick={() => handleUpdate()}>Update Album</button>
     </div>
+    <Link to="/" className='back-button'>Back</Link>
 
-   
-       <Link to="/" className='back-button'>Back</Link>
-   
 </div>
   )
 }

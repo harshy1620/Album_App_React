@@ -8,11 +8,24 @@ function App() {
   const[albums,setAlbums]=useState(null);
   
 // FETCHING THE DATA FROM THE URL
-  useEffect(() =>{
-      fetch('https://jsonplaceholder.typicode.com/albums')
-          .then((response) => response.json())
-          .then((data) => setAlbums(data))
-  },[]);
+
+// Method 1 to fetch the albums
+useEffect(() =>{
+  const fetchData = async() =>{
+    const response = await fetch('https://jsonplaceholder.typicode.com/albums');
+    const data = await response.json();
+    await setAlbums(data);
+  };
+  fetchData();
+},[]);
+
+
+// Method 2 to fetch the albums
+  // useEffect(() =>{
+  //   fetch('https://jsonplaceholder.typicode.com/albums')
+  //   .then((response) => response.json())
+  //   .then((data) => setAlbums(data))
+  // },[]);
 
 
 // DELETING AN ALBUM
@@ -26,7 +39,9 @@ const deleteAlbum = (albumId) => {
   // showing deletion on the UI
   const newAlbums = albums.filter((album) => album.id !== albumId);
   setAlbums(newAlbums);
-}
+};
+
+
   
 // ADDING AN ALBUM
 const addAlbum = (title) =>{
@@ -59,7 +74,6 @@ const updateAlbum = (albumId,title) =>{
   },
 })
   .then((response) => response.json())
-  .then((json) => console.log(json));
   const oldAlbum = albums.filter((album) => album.id.toString() === albumId);
   oldAlbum[0].title = title;
   alert('Update Album Successfully.')
